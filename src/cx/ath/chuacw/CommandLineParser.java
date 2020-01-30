@@ -17,7 +17,7 @@ public class CommandLineParser {
         scanner = new Scanner(input);        
     }
 
-    public void initScanner(final String filename) {
+    public void initScannerFileName(final String filename) {
         try {
             scanner = new Scanner(new File(filename));
         } catch (final FileNotFoundException e) {
@@ -25,7 +25,7 @@ public class CommandLineParser {
         }
     }
 
-    public boolean hasCommand() {
+    public boolean hasCommandArgs() {
         if (scanner != null)
             return scanner.hasNextLine();
         else
@@ -53,11 +53,10 @@ public class CommandLineParser {
 
         final String filename = args[0];
         commandlineParser.initScanner("Hello world");
-        String[] o = commandlineParser.nextCommandArgs();
 
         commandlineParser.initScanner(filename);
 
-        while (commandlineParser.hasCommand()) {
+        while (commandlineParser.hasCommandArgs()) {
             final String[] commandArgs = commandlineParser.nextCommandArgs();
             
             System.out.println("Command: " + commandArgs[0]);

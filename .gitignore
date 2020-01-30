@@ -24,6 +24,4 @@ hs_err_pid*
 
 .settings/
 .vscode/*
-
-
-
+lib/*.jar
