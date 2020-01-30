@@ -7,5 +7,9 @@
 # After this is run, bin/parking_lot
 # should Just Work.
 
-# Install OpenJDK
-sudo apt install -y openjdk-11-jre-headless
+# Ubuntu 18.04.2 64-bit desktop
+# Install default jdk, comment out the following line if Java is already installed.
+sudo apt install -y default-jdk
+
+# Install the default jre, comment out the following line if JRE is already installed.
+sudo apt install -y default-jre
