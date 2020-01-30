@@ -13,3 +13,18 @@ sudo apt install -y default-jdk
 
 # Install the default jre, comment out the following line if JRE is already installed.
 sudo apt install -y default-jre
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+cd $DIR/..
+mkdir lib
+pushd lib
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0.jar
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0-javadoc.jar
+
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0-javadoc.jar
+
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0-javadoc.jar
+popd
+

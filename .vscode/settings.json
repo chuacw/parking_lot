@@ -1,3 +1,5 @@
 {
-"java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+"java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+"java.dependency.syncWithFolderExplorer": false,
+"java.dependency.packagePresentation": "flat"
 }
