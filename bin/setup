@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Add script to:
 # * Install dependencies
 # * Build/Compile
@@ -5,3 +6,6 @@
 #
 # After this is run, bin/parking_lot
 # should Just Work.
+
+# Install OpenJDK
+sudo apt install -y openjdk-11-jre-headless
