@@ -13,6 +13,10 @@ public class CommandLineParser {
 
     private Scanner scanner;
 
+    public void initScanner(String input) {
+        scanner = new Scanner(input);        
+    }
+
     public void initScanner(final String filename) {
         try {
             scanner = new Scanner(new File(filename));
@@ -48,6 +52,9 @@ public class CommandLineParser {
         final CommandLineParser commandlineParser = new CommandLineParser();
 
         final String filename = args[0];
+        commandlineParser.initScanner("Hello world");
+        String[] o = commandlineParser.nextCommandArgs();
+
         commandlineParser.initScanner(filename);
 
         while (commandlineParser.hasCommand()) {

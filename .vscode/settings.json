@@ -1,5 +1,8 @@
 {
-"java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
-"java.dependency.syncWithFolderExplorer": false,
-"java.dependency.packagePresentation": "flat"
+
+    // Comment out for testing on Windows
+    // " xava.home": "/usr/lib/jvm/java-11-openjdk-amd64", 
+    "java.dependency.syncWithFolderExplorer": false,
+    "java.dependency.packagePresentation": "flat",
+    "java.home": "C:\\Program Files\\Java\\jdk1.8.0_144"
 }
