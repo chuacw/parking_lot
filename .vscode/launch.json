@@ -9,13 +9,15 @@
             "name": "CodeLens (Launch) - CommandLineParser",
             "request": "launch",
             "mainClass": "cx.ath.chuacw.CommandLineParser",
-            "projectName": "parking_lot_bdda298a"
+            "projectName": "parking_lot_bdda298a",
+            "args": "file_inputs.txt"
         },
         {
             "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "args": "file_inputs.txt"
         }
     ]
 }

@@ -1,9 +1,28 @@
 package cx.ath.chuacw;
 
-public class CommandLineParser {
-    public static void main(String[] args){
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-        System.out.println("Hello World");
-        
+public class CommandLineParser {
+
+    public static void main(final String[] args) {
+
+        if (args.length == 0) {
+            System.out.println("Input filename required.");
+            return;
+        }
+        final String filename = args[0];
+        Scanner scanner;
+        try {
+            scanner = new Scanner(new File(filename));
+            while (scanner.hasNextLine()) {
+                final String commandline = scanner.nextLine();
+                final String[] commandArgs = commandline.split(" ");
+            }
+        } catch (final FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
