@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ParkingLot {
 
+	public static final String cSlotFree = "Slot number %d is free";
 	private ArrayList<Car> mParkedCars;
 	private int mParkedCarsCapacity;
 	
@@ -19,6 +20,12 @@ public class ParkingLot {
 		int lSlotNumber = mParkedCars.indexOf(aCar);
 		Ticket lTicket = new Ticket(aCar, lSlotNumber);
 		return lTicket;
+	}
+	
+	public String removeCar(int index) {
+		mParkedCars.remove(index);
+		String lResult = String.format(cSlotFree, index);
+		return lResult;
 	}
 	
 	public int getCapacity() {
