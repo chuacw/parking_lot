@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class CommandCreateParkingLot extends BaseCommand {
 
 	public static String cOutputFormat = "Created a parking lot with %d slots";
+	protected static String cCreateParkingLot = "create_parking_lot";
 	
 	public CommandCreateParkingLot() {
-		super(BaseCommand.cCreateParkingLot, 1);
+		super(CommandCreateParkingLot.cCreateParkingLot, 1);
 	}
 
 	@Override

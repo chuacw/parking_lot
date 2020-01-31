@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestBaseCommand1 extends TestBaseCommand {
     @Test
     public void test() {
-    	assertEquals("BaseCommand ", mBaseCommand.getCommand(), BaseCommand.cCreateParkingLot);
+    	assertEquals("BaseCommand ", mBaseCommand.getCommand(), CommandCreateParkingLot.cCreateParkingLot);
     }
 
 }

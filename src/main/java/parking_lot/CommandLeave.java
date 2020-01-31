@@ -2,8 +2,10 @@ package parking_lot;
 
 public class CommandLeave extends BaseCommand {
 
+	protected static String cLeave = "leave";
+
 	public CommandLeave() {
-		super(BaseCommand.cLeave, 1);
+		super(CommandLeave.cLeave, 1);
 	}
 
 }

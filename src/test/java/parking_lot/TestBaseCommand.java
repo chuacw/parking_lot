@@ -8,7 +8,7 @@ public class TestBaseCommand {
 	
     @Before
     public void setup(){
-    	mBaseCommand = new BaseCommand(BaseCommand.cCreateParkingLot, 1);
+    	mBaseCommand = new BaseCommand(CommandCreateParkingLot.cCreateParkingLot, 1);
     }
 
 }

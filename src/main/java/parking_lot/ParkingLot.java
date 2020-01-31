@@ -26,4 +26,9 @@ public class ParkingLot {
 		return lResult;
 	}
 	
+	public int getAvailable() {
+		int lResult = mParkedCarsCapacity - mParkedCars.size();
+		return lResult;
+	}
+	
 }
