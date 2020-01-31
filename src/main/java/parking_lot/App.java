@@ -3,15 +3,14 @@
  */
 package parking_lot;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 	public static String delimiter = " ";
-	
-    public String getGreeting() {
-    	return "hello world";
-    }
 	
 	public String[] parseCommand(final String Line) {
         final String[] result = Line.split(delimiter);
@@ -22,6 +21,15 @@ public class App {
 
     public void initScanner(String input) {
         mScanner = new Scanner(input);        
+    }
+
+    public void initScannerFileName(String aFileName) {
+        try {
+			mScanner = new Scanner(new File(aFileName));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}        
     }
 
     public void initScanner(InputStream input) {
@@ -52,14 +60,31 @@ public class App {
         if (args.length == 0) {
         	commandlineParser.initScanner(System.in);
         } else {
-            final String filename = args[0];
-            commandlineParser.initScanner(filename);
+            final String lFileName = args[0];
+            commandlineParser.initScannerFileName(lFileName);
         }
+        
+        System.out.println("Parking system ready...");
 
+        CommandController lCommandController = new CommandController();
+        
         while (commandlineParser.hasCommandArgs()) {
-            final String[] commandArgs = commandlineParser.nextCommandArgs();
-            
-            System.out.println("Command: " + commandArgs[0]);
+            final String[] lCommandArgs = commandlineParser.nextCommandArgs();
+            BaseCommand lCommand = lCommandController.findCommand(lCommandArgs[0]);
+            if (lCommand != null) {
+            	int len = lCommand.getRequiredArgLen();
+            	ArrayList<String> lArgs = new ArrayList<String>();
+            	for (int i = 1; i <= len; i++) {
+            	  lArgs.add(lCommandArgs[i]);	
+            	}
+            	String runResult = lCommand.run(lArgs);
+            	if (runResult != null) {
+            		System.out.println(runResult);
+            	}
+            } else {
+            	String lLine = String.format("Command not found: %s.", lCommandArgs[0]);
+            	System.out.println(lLine);
+            }
         }
     }
 

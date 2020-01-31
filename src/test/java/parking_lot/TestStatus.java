@@ -34,7 +34,7 @@ public class TestStatus extends TestParkingLotsBase {
 		StringBuilder lSB = new StringBuilder();
 		appendLine(lSB, CommandStatus.cHeader);
 		String lStatus = String.format(CommandStatus.cOutputFormat, 1, mPlate, mColour);
-		appendLine(lSB, lStatus);
+		lSB.append(lStatus);
 		
 		String lExpected = lSB.toString();
 		

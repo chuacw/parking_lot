@@ -1,12 +1,37 @@
 package parking_lot;
 
-public class CommandQuerySlotForCarColour extends BaseCommand {
+import java.util.ArrayList;
+
+public class CommandQuerySlotForCarColour extends BaseCommandQuery {
 
 	protected static String cQuerySlotForCarColour = "slot_numbers_for_cars_with_colour";
 
-	public CommandQuerySlotForCarColour(String aCommand, int aArgLen) {
+	public CommandQuerySlotForCarColour() {
 		super(CommandQuerySlotForCarColour.cQuerySlotForCarColour, 1);
-		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String run(ArrayList<String> args) {
+		String lColour = args.get(0);
+		StringBuilder lSB = new StringBuilder();
+		ParkingLot lParkingLot = Owner.getParkingLot(); 
+		int lUsed = lParkingLot.getUsed();
+		for (int i = 1; i <= lUsed; i++) {
+			Car lCar = lParkingLot.getCar(i);
+			String lCarColour = lCar.getColour();
+			if (lCarColour.equalsIgnoreCase(lColour)) {
+				String lSlotNumber = String.valueOf(i);
+				if (lSB.length() > 0) {
+					lSB.append(", ");
+				}
+				lSB.append(lSlotNumber);
+			}
+		}
+		if (lUsed == 0) {
+			lSB.append(cNotFound);
+		}
+		String lResult = lSB.toString();
+		return lResult;
 	}
 
 }

@@ -12,6 +12,8 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     application
+    
+    
 }
 
 repositories {
@@ -32,3 +34,4 @@ application {
     // Define the main class for the application.
     mainClassName = "parking_lot.App"
 }
+
