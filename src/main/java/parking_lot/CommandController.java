@@ -13,6 +13,7 @@ public class CommandController {
 		mCommands.put(CommandStatus.cStatus, CommandStatus.class);
 		mCommands.put(CommandQueryPlateForCarColour.cQueryPlateForCarColour, CommandQueryPlateForCarColour.class);
 		mCommands.put(CommandQuerySlotForCarColour.cQuerySlotForCarColour, CommandQuerySlotForCarColour.class);
+		mCommands.put(CommandQuerySlotForCarPlate.cQuerySlotForCarPlate, CommandQuerySlotForCarPlate.class); 
 		mCommands.put(CommandCreateParkingLot.cCreateParkingLot, CommandCreateParkingLot.class);
 		mCommands.put(CommandExit.cExit, CommandExit.class);
 	}

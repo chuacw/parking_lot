@@ -52,13 +52,29 @@ public class App {
         String[] cmdArgs = line.split(" ");
         return cmdArgs;
     }
+    
+    public static boolean mInteractive;
+    
+    public static void printPromptIfInteractive() {
+    	if (mInteractive) {
+    		System.out.print("$ ");
+    	}
+    }
+
+    public static void printNewLineIfInteractive() {
+    	if (mInteractive) {
+    		System.out.println("");
+    	}
+    }
 
     public static void main(final String[] args) {
 
         final App commandlineParser = new App();
 
+        mInteractive = false;
         if (args.length == 0) {
         	commandlineParser.initScanner(System.in);
+        	mInteractive = true;
         } else {
             final String lFileName = args[0];
             commandlineParser.initScannerFileName(lFileName);
@@ -68,8 +84,9 @@ public class App {
 
         CommandController lCommandController = new CommandController();
         
+        printPromptIfInteractive();
         while (commandlineParser.hasCommandArgs()) {
-            final String[] lCommandArgs = commandlineParser.nextCommandArgs();
+        	final String[] lCommandArgs = commandlineParser.nextCommandArgs();
             BaseCommand lCommand = lCommandController.findCommand(lCommandArgs[0]);
             if (lCommand != null) {
             	int len = lCommand.getRequiredArgLen();
@@ -80,11 +97,14 @@ public class App {
             	String runResult = lCommand.run(lArgs);
             	if (runResult != null) {
             		System.out.println(runResult);
+            		printNewLineIfInteractive();
             	}
             } else {
             	String lLine = String.format("Command not found: %s.", lCommandArgs[0]);
             	System.out.println(lLine);
+            	printNewLineIfInteractive();
             }
+            printPromptIfInteractive();
         }
     }
 
