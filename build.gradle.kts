@@ -42,15 +42,18 @@ distributions {
             into("sources") {
                 from("src")
             }
+            into(".git") {
+                from(".git")
+            }
         }
     }
-   
 }
 
 tasks.withType(Jar::class) {
     manifest {
         attributes["Manifest-Version"] = "1.0"
-        attributes["Main-Class"] = "parking_lot.App"
+        attributes["Main-Class"] = application.mainClassName
+        attributes["Author"] = "CheeWee Chua/chuacw"
     }
 }
 

@@ -85,25 +85,41 @@ public class App {
         
         printPromptIfInteractive();
         while (commandlineParser.hasCommandArgs()) {
-        	final String[] lCommandArgs = commandlineParser.nextCommandArgs();
-            BaseCommand lCommand = lCommandController.findCommand(lCommandArgs[0]);
-            if (lCommand != null) {
-            	int len = lCommand.getRequiredArgLen();
-            	ArrayList<String> lArgs = new ArrayList<String>();
-            	for (int i = 1; i <= len; i++) {
-            	  lArgs.add(lCommandArgs[i]);	
-            	}
-            	String runResult = lCommand.run(lArgs);
-            	if (runResult != null) {
-            		System.out.println(runResult);
-            		printNewLineIfInteractive();
-            	}
-            } else {
-            	String lLine = String.format("Command not found: %s.", lCommandArgs[0]);
-            	System.out.println(lLine);
-            	printNewLineIfInteractive();
-            }
-            printPromptIfInteractive();
+        	
+        	try {
+
+        		final String[] lCommandArgs = commandlineParser.nextCommandArgs();
+				BaseCommand lCommand = lCommandController.findCommand(lCommandArgs[0]);
+				if (lCommand != null) {
+					int len = lCommand.getRequiredArgLen();
+					ArrayList<String> lArgs = new ArrayList<String>();
+					for (int i = 1; i <= len; i++) {
+					  lArgs.add(lCommandArgs[i]);	
+					}
+					String runResult = lCommand.run(lArgs);
+					if (runResult != null) {
+						System.out.println(runResult);
+						printNewLineIfInteractive();
+					}
+				} else {
+					String lLine = String.format("Command not found: %s.", lCommandArgs[0]);
+					System.out.println(lLine);
+					printNewLineIfInteractive();
+				}
+				
+			} catch (Exception e) {
+				System.out.println("You might not have run the commands in order.");
+				System.out.println("HINT: If you're parking a car, you need to create a parking lot first.");
+				System.out.println("HINT: If you're trying to query parking lots for car info, you need to park a car first.");
+				System.out.println("HINT: If you're trying to return a car, you need to have parked a car first.");
+				System.out.println("");
+				System.out.println("Stack trace follows:");
+				e.printStackTrace();
+				System.out.println("");
+			}
+
+			printPromptIfInteractive();
+
         }
     }
 
