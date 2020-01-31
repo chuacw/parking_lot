@@ -2,8 +2,6 @@ package parking_lot;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
-
 public class TestCreateParkingLotBase {
 
     protected BaseCommand mBaseCommand;

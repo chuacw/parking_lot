@@ -15,7 +15,7 @@ public class TestLeaveParking extends TestParkingLotsBase {
 	
 	private void leaveParkingSlot(int index) {
 		BaseCommand lCommandLeave = new CommandLeave();
-		ArrayList<String> args = new ArrayList();
+		ArrayList<String> args = new ArrayList<String>();
 		mLeftSlot = 1;
 		args.add(String.valueOf(mLeftSlot));
 		mLeaveResult = lCommandLeave.run(args);
