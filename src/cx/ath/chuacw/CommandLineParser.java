@@ -11,31 +11,31 @@ public class CommandLineParser {
         return result;
     }
 
-    private Scanner scanner;
+    private Scanner mScanner;
 
     public void initScanner(String input) {
-        scanner = new Scanner(input);        
+        mScanner = new Scanner(input);        
     }
 
     public void initScannerFileName(final String filename) {
         try {
-            scanner = new Scanner(new File(filename));
+            mScanner = new Scanner(new File(filename));
         } catch (final FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     public boolean hasCommandArgs() {
-        if (scanner != null)
-            return scanner.hasNextLine();
+        if (mScanner != null)
+            return mScanner.hasNextLine();
         else
             return false;
     }
 
     public String[] nextCommandArgs() {
         String line;
-        if (scanner != null)
-            line = scanner.nextLine();
+        if (mScanner != null)
+            line = mScanner.nextLine();
         else
             line = "";
         String[] cmdArgs = line.split(" ");
@@ -52,7 +52,6 @@ public class CommandLineParser {
         final CommandLineParser commandlineParser = new CommandLineParser();
 
         final String filename = args[0];
-        commandlineParser.initScanner("Hello world");
 
         commandlineParser.initScanner(filename);
 

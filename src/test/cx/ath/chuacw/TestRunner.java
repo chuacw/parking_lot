@@ -10,7 +10,9 @@ public class TestRunner {
       Result result = JUnitCore.runClasses(
 //    		  TestJunit.class 
     		  TestCommandLineParserHasCommandArgs.class,
-    		  TestCommandLineParserNextCommandArgsEquals2.class
+    		  TestCommandLineParserNextCommandArgsEquals2.class,
+    		  TestCommandLineParserNextCommandArgsArgument1.class,
+    		  TestCommandLineParserNextCommandArgsArgument2.class
     		  
       );
       for (Failure failure : result.getFailures()) {

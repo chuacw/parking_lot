@@ -6,16 +6,8 @@ import org.junit.Before;
 import cx.ath.chuacw.CommandLineParser;
 import static org.junit.Assert.assertEquals;
 
-public class TestCommandLineParserNextCommandArgsEquals2 {
+public class TestCommandLineParserNextCommandArgsEquals2 extends TestCommandLineParserHasCommandArgs {
 
-	private CommandLineParser commandlineParser;
-	
-    @Before
-    public void setup(){
-    	commandlineParser = new CommandLineParser();
-    	commandlineParser.initScanner("park test");
-    }
-        
     @Test
     public void test() {
     	String[] commandArgs = commandlineParser.nextCommandArgs();

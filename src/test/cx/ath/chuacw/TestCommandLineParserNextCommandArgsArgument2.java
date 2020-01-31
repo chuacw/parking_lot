@@ -6,11 +6,13 @@ import org.junit.Before;
 import cx.ath.chuacw.CommandLineParser;
 import static org.junit.Assert.assertEquals;
 
-public class TestCommandLineParserHasCommandArgs extends TestCommandLineParserBase1 {
+public class TestCommandLineParserNextCommandArgsArgument2 extends TestCommandLineParserBase1 {
 
     @Test
     public void test() {
-    	assertEquals(commandlineParser.hasCommandArgs(), true);
+    	String[] commandArgs = commandlineParser.nextCommandArgs();
+    	assertEquals(commandArgs[1], "test");
     }
+        
 }
     
