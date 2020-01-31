@@ -1,4 +1,4 @@
-package cx.ath.chuacw;
+package parking_lot;
 
 public class Command {
 
