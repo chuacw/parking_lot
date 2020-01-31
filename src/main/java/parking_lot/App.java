@@ -27,7 +27,6 @@ public class App {
         try {
 			mScanner = new Scanner(new File(aFileName));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}        
     }
@@ -49,7 +48,7 @@ public class App {
             line = mScanner.nextLine();
         else
             line = "";
-        String[] cmdArgs = line.split(" ");
+        String[] cmdArgs = line.split(delimiter);
         return cmdArgs;
     }
     
