@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class ParkingLot {
 
-	ArrayList<Car> mParkedCars;
-	public ParkingLot(int numSlots) {
-		mParkedCars = new ArrayList<Car>(numSlots+1);
+	private ArrayList<Car> mParkedCars;
+	private int mParkedCarsCapacity;
+	
+	public ParkingLot(int aNumSlots) {
+		mParkedCarsCapacity = aNumSlots;
+		mParkedCars = new ArrayList<Car>(mParkedCarsCapacity+1);
 		ReservedCar lReservedCar = new ReservedCar("reserved", "reserved");
 		mParkedCars.add(lReservedCar);
 	}
@@ -19,7 +22,7 @@ public class ParkingLot {
 	}
 	
 	public int getCapacity() {
-		int lResult = mParkedCars.size()-1;
+		int lResult = mParkedCarsCapacity;
 		return lResult;
 	}
 	

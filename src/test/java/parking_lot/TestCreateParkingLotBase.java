@@ -6,8 +6,7 @@ import org.junit.Before;
 
 public class TestCreateParkingLotBase {
 
-    @SuppressWarnings("unused")
-	protected BaseCommand mBaseCommand;
+    protected BaseCommand mBaseCommand;
 	protected String mCommandResult;
 	protected int mCreateSlots;
 	
