@@ -19,7 +19,7 @@ public class CommandPark extends BaseCommand {
 		String lPlate = args.get(0);
 		String lColour = args.get(1);
 
-		if (lParkingLot.getAvailable() > 0) {
+ 		if (lParkingLot.getAvailable() > 0) {
 			Car lCar = new Car(lColour, lPlate);
 			Ticket lTicket = lParkingLot.parkCar(lCar);
 			String lResult = String.format(cAllocatedSlot, lTicket.getSlotNumber());

@@ -16,7 +16,8 @@ public class CommandCreateParkingLot extends BaseCommand {
 		int lNumSlots = Integer.parseInt(args.get(0));
 		Owner.createParkingLot(lNumSlots);
 		int lActualSlots = Owner.getParkingLot().getCapacity();
-		String lresult = String.format(cOutputFormat, lActualSlots);
-		return lresult;
+		String lResult = String.format(cOutputFormat, lActualSlots);
+		return lResult;
 	}
+	
 }
