@@ -34,3 +34,27 @@ application {
     mainClassName = "parking_lot.App"
 }
 
+distributions {
+    main {
+        distributionBaseName.set("parking_lot_sources")
+        
+        contents {
+            into("sources") {
+                from("src")
+            }
+        }
+    }
+   
+}
+
+tasks.withType(Jar::class) {
+    manifest {
+        attributes["Manifest-Version"] = "1.0"
+        attributes["Main-Class"] = "parking_lot.App"
+    }
+}
+
+
+
+
+
