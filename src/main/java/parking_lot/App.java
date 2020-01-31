@@ -79,7 +79,7 @@ public class App {
             commandlineParser.initScannerFileName(lFileName);
         }
         
-        System.out.println("Parking system ready...");
+//        System.out.println("Parking system ready...");
 
         CommandController lCommandController = new CommandController();
         
