@@ -18,4 +18,9 @@ public class ParkingLot {
 		return lTicket;
 	}
 	
+	public int getCapacity() {
+		int lResult = mParkedCars.size()-1;
+		return lResult;
+	}
+	
 }
