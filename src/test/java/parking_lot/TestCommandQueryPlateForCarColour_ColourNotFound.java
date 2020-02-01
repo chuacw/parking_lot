@@ -10,14 +10,6 @@ public class TestCommandQueryPlateForCarColour_ColourNotFound extends TestComman
 
 	private static String cColour3 = "Orange";
 
-	private String queryPlateForCarColour() {
-		BaseCommand lCommand = new CommandQueryPlateForCarColour();
-		ArrayList<String> lArgs = new ArrayList<String>();
-		lArgs.add(cColour3);
-		String lResult = lCommand.run(lArgs);
-		return lResult;
-	}
-	
 	/**
 	 * Test for no matches.
 	 *  
@@ -26,7 +18,7 @@ public class TestCommandQueryPlateForCarColour_ColourNotFound extends TestComman
     public void test() {
 		String lShould = "Shouldn't have any matches";
 		String lExpected = CommandQueryPlateForCarColour.cNotFound;
-		String lActual = queryPlateForCarColour();
+		String lActual = queryPlateForCarColour(cColour3);
 		assertEquals(lShould, lExpected, lActual);
     }
 }
