@@ -1,6 +1,7 @@
 package parking_lot;
 
 public class Ticket {
+	
 	private String mPlate;
 	private String mColour;
 	private int mSlotNumber;
@@ -22,4 +23,5 @@ public class Ticket {
 	public int getSlotNumber() {
 		return mSlotNumber;
 	}
+	
 }

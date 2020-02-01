@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class CommandQueryPlateForCarColour extends BaseCommandQuery {
 
-	protected static String cQueryPlateForCarColour = "registration_numbers_for_cars_with_colour";
+	protected static String cQueryPlateForCarColour = 
+			"registration_numbers_for_cars_with_colour";
 
 	public CommandQueryPlateForCarColour() {
 		super(CommandQueryPlateForCarColour.cQueryPlateForCarColour, 1);

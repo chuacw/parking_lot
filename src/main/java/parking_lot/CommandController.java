@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class CommandController {
+	
 	private Map<String, Class<? extends BaseCommand>> mCommands;
 
 	public CommandController() {

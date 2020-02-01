@@ -1,6 +1,7 @@
 package parking_lot;
 
 public class Car {
+	
 	private String mColour;
 	private String mPlate;
 	

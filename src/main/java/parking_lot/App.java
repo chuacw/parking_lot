@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
+	
 	public static String delimiter = " ";
 	
 	public String[] parseCommand(final String Line) {

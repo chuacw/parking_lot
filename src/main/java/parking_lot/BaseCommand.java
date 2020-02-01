@@ -3,6 +3,7 @@ package parking_lot;
 import java.util.ArrayList;
 
 public class BaseCommand {
+	
 	protected int mArgLen;
 	protected String mCommand;
 
