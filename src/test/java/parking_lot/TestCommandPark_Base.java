@@ -2,7 +2,7 @@ package parking_lot;
 
 import java.util.ArrayList;
 
-public class TestParkingLotsBase extends TestCommandCreateParkingLot_Base {
+public class TestCommandPark_Base extends TestCommandCreateParkingLot_Base {
 	
 	protected String mResult;
 

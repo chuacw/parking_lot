@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestCommandStatus extends TestParkingLotsBase {
+public class TestCommandStatus extends TestCommandPark_Base {
 
 	private String mPlate;
 	private String mColour;
