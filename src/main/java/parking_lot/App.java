@@ -64,16 +64,16 @@ public class App {
     	}
     }
 
-    public static void main(final String[] args) {
+    public static void main(final String[] aArgs) {
 
         final App lCommandLineParser = new App();
 
         mInteractive = false;
-        if (args.length == 0) {
+        if (aArgs.length == 0) {
         	lCommandLineParser.initScanner(System.in);
         	mInteractive = true;
         } else {
-            final String lFileName = args[0];
+            final String lFileName = aArgs[0];
             lCommandLineParser.initScannerFileName(lFileName);
         }
         
