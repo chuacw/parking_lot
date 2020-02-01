@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Returns the slot number used by all cars, its plate number, and colour.
+ * If there are no cars available, return an empty string.
  * @author Administrator
  *
  */
@@ -28,13 +29,12 @@ public class CommandStatus extends BaseCommand {
 //		5      KA-01-HH-2701       Blue 
 //		6      KA-01-HH-3141      Black
 
-		boolean lAddLine = true;
-		lSBDetails.append(cHeader);
+		boolean lAddLine = false;
 		ParkingLot lParkingLot = Owner.getParkingLot();
 		int lUsed = lParkingLot.getUsed();
+		String lLineSep = System.lineSeparator();
 		for (int i = 1; i <= lUsed; i++) {
 			if ((lAddLine) && (lSBDetails.length() > 0)) {
-				String lLineSep = System.lineSeparator();
 				lSBDetails.append(lLineSep);
 			}
 			lAddLine = false;
@@ -48,8 +48,16 @@ public class CommandStatus extends BaseCommand {
 				lAddLine = true;
 			}
 		}
-
-		String lResult = lSBDetails.toString();
+		String lResult;
+		if (lSBDetails.length() > 0 ) {
+			StringBuilder lSBHeader = new StringBuilder();
+			lSBHeader.append(cHeader);
+			lSBHeader.append(lLineSep);
+			lSBHeader.append(lSBDetails.toString());
+			lResult = lSBHeader.toString();
+		} else {
+			lResult = "";
+		}
 		return lResult;
 	}
 
