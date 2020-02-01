@@ -10,14 +10,6 @@ public class TestCommandQuerySlotForCarColour_ColourNotFound extends TestCommand
 
 	private static String cImpossibleColour = "ThisDoesn'tExist";
 	
-	private String getSlotForCarColour() {
-		BaseCommand lCommand = new CommandQuerySlotForCarColour();
-		ArrayList<String> lArgs = new ArrayList<String>();
-		lArgs.add(cImpossibleColour);
-		String lResult = lCommand.run(lArgs);
-		return lResult;
-	}
-	
 	/**
 	 * Look for an impossible colour.
 	 * The expected result is Not found
@@ -27,7 +19,7 @@ public class TestCommandQuerySlotForCarColour_ColourNotFound extends TestCommand
     public void test() {
 		String lShould = "Should have no matches";
 		String lExpected = CommandQuerySlotForCarColour.cNotFound;
-		String lActual = getSlotForCarColour();
+		String lActual = getSlotForCarColour(cImpossibleColour);
 		assertEquals(lShould, lExpected, lActual);
     }
 
