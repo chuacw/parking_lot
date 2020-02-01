@@ -16,7 +16,6 @@ public class TestCommandQueryPlateForCarColour_ColourFound extends TestCommandQu
 		return lResult;
 	}
 	
-	
 	/**
 	 * Plate 1 and Plate 3 should be the same colour.
 	 * This is encoded in the ancestor class. 
@@ -28,4 +27,5 @@ public class TestCommandQueryPlateForCarColour_ColourFound extends TestCommandQu
 		String lActual = getActualResult();
 		assertEquals(lShould, lExpected, lActual);
     }
+	
 }
