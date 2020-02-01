@@ -11,7 +11,7 @@ public class CommandExit extends BaseCommand {
 	}
 	
 	@Override
-	public String run(ArrayList<String> args) {
+	public String run(ArrayList<String> aArgs) {
 		System.exit(0);
 		return null; // Unused, needed to keep compiler / parser happy
 	}

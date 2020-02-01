@@ -11,8 +11,8 @@ public class CommandQuerySlotForCarPlate extends BaseCommandQuery {
 	}
 	
 	@Override
-	public String run(ArrayList<String> args) {
-		String lPlate = args.get(0);
+	public String run(ArrayList<String> aArgs) {
+		String lPlate = aArgs.get(0);
 		StringBuilder lSB = new StringBuilder();
 		ParkingLot lParkingLot = Owner.getParkingLot(); 
 		int lUsed = lParkingLot.getUsed();

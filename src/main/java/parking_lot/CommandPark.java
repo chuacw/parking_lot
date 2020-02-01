@@ -13,11 +13,11 @@ public class CommandPark extends BaseCommand {
 	}
 
 	@Override
-	public String run(ArrayList<String> args) {
+	public String run(ArrayList<String> aArgs) {
 		ParkingLot lParkingLot = Owner.getParkingLot();
 		// park KA-01-HH-1234 White
-		String lPlate = args.get(0);
-		String lColour = args.get(1);
+		String lPlate = aArgs.get(0);
+		String lColour = aArgs.get(1);
 
  		if (lParkingLot.getAvailable() > 0) {
 			Car lCar = new Car(lColour, lPlate);

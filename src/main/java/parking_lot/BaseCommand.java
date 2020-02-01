@@ -19,7 +19,7 @@ public class BaseCommand {
 		return mCommand;
 	}
 
-	public String run(ArrayList<String> args) {
+	public String run(ArrayList<String> aArgs) {
 		return null;
 	}
 

@@ -12,8 +12,8 @@ public class CommandCreateParkingLot extends BaseCommand {
 	}
 
 	@Override
-	public String run(ArrayList<String> args) {
-		int lNumSlots = Integer.parseInt(args.get(0));
+	public String run(ArrayList<String> aArgs) {
+		int lNumSlots = Integer.parseInt(aArgs.get(0));
 		Owner.createParkingLot(lNumSlots);
 		int lActualSlots = Owner.getParkingLot().getCapacity();
 		String lResult = String.format(cOutputFormat, lActualSlots);

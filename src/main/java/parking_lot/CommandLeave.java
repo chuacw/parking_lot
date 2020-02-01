@@ -12,8 +12,8 @@ public class CommandLeave extends BaseCommand {
 	}
 
 	@Override
-	public String run(ArrayList<String> args) {
-		int index = Integer.parseInt(args.get(0));
+	public String run(ArrayList<String> aArgs) {
+		int index = Integer.parseInt(aArgs.get(0));
 		String lResult = Owner.getParkingLot().removeCar(index);
 		return lResult;
 	}

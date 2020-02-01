@@ -15,7 +15,7 @@ public class CommandStatus extends BaseCommand {
 	private StringBuilder mSB;
 
 	@Override
-	public String run(ArrayList<String> args) {
+	public String run(ArrayList<String> aArgs) {
 		mSB = new StringBuilder();
 
 //		Slot No. Registration No Colour 
