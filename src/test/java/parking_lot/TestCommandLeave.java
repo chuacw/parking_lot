@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestLeaveParking extends TestParkingLotsBase {
+public class TestCommandLeave extends TestParkingLotsBase {
 
 	
 	private String mLeaveResult;
