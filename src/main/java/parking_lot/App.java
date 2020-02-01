@@ -94,9 +94,9 @@ public class App {
 					for (int i = 1; i <= len; i++) {
 					  lArgs.add(lCommandArgs[i]);	
 					}
-					String runResult = lCommand.run(lArgs);
-					if (runResult != null) {
-						System.out.println(runResult);
+					String lRunResult = lCommand.run(lArgs);
+					if (lRunResult != null) {
+						System.out.println(lRunResult);
 						// printNewLineIfInteractive();
 					}
 				} else {
