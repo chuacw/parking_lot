@@ -10,7 +10,7 @@ import org.junit.Before;
  * 3. KA-02-KK-2345 White 
  * 
  * 
- * @author Administrator
+ * @author chuacw
  *
  */
 public class TestCommandQueryPlateForCarColour_Base extends TestCommandPark_Base {

@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This test case tests leaving a parking lot.
+ * 
+ * @author chuacw
+ *
+ */
 public class TestCommandLeave extends TestCommandPark_Base {
 
 	

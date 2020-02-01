@@ -6,6 +6,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+/**
+ * This tests parking of 3 cars, but 2 with cColour1
+ * and checks that when querying status, the plates returned
+ * are as expected.
+ * 
+ * @author chuacw
+ *
+ */
 public class TestCommandQueryPlateForCarColour_ColourFound extends TestCommandQueryPlateForCarColour_Base {
 
 	private String getActualResult() {

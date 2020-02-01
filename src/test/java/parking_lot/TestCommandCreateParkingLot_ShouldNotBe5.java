@@ -5,6 +5,13 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This test case creates 6 parking slots, and checks
+ * that the return slot is not anything other than 6.
+ * 
+ * @author chuacw
+ *
+ */
 public class TestCommandCreateParkingLot_ShouldNotBe5 extends TestCommandCreateParkingLot_Base {
 
 	@Before
