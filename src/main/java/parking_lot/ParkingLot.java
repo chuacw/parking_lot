@@ -16,7 +16,7 @@ public class ParkingLot {
 		mParkedCarsCapacity = aNumSlots;
 		mRealCapacity = mParkedCarsCapacity + 1;
 		mParkedCars = new ArrayList<Car>(mRealCapacity);
-		ReservedCar lReservedCar = new ReservedCar("reserved", "reserved");
+		ReservedCar lReservedCar = new ReservedCar();
 		mParkedCars.add(lReservedCar);
 	}
 	
