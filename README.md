@@ -1,5 +1,5 @@
 # parking_lot
-This is a Java parking lot management app.
+This is a Java parking lot management application.
 
 # Building the app
-See BUILD.md
+See [BUILD.md](BUILD.md).
