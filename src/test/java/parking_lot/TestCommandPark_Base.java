@@ -12,7 +12,7 @@ public class TestCommandPark_Base extends TestCommandCreateParkingLot_Base {
 	 * @param aColour Colour of car.
 	 * @return a string that indicates which slot number it parked at.
 	 */
-	public static String runPark(String aPlate, String aColour) {
+	public static String parkCar(String aPlate, String aColour) {
 		BaseCommand lParkingCommand = new CommandPark();
 		ArrayList<String> args = new ArrayList<String>();
 		args.add(aPlate);

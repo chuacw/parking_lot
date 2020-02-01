@@ -17,9 +17,9 @@ public class TestCommandCreateParkingLot_TestMaxCapacity extends TestCommandPark
     public void test() {
 		String lShould = String.format("Car park should be able to park %d cars.", mCreateSlots);
 
-		String lResult1 = runPark("XXX", "Black");
-		String lResult2 = runPark("YYY", "White");
-		String lResult3 = runPark("ZZZ", "Yellow");
+		String lResult1 = parkCar("XXX", "Black");
+		String lResult2 = parkCar("YYY", "White");
+		String lResult3 = parkCar("ZZZ", "Yellow");
 
 		String lExpected1 = String.format(CommandPark.cAllocatedSlot, 1);
 		String lExpected2 = String.format(CommandPark.cAllocatedSlot, 2);

@@ -24,7 +24,7 @@ public class TestCommandLeave extends TestCommandPark_Base {
 	@Before
 	public void setup() {
 		createParkingLots(1);
-		mResult = runPark("KA-01-HH-1234", "White");
+		mResult = parkCar("KA-01-HH-1234", "White");
 		leaveParkingSlot(1);
 	}
 

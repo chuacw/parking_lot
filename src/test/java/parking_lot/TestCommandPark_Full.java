@@ -17,7 +17,7 @@ public class TestCommandPark_Full extends TestCommandPark_Base {
 	@Before
 	public void setup() {
 		createParkingLots(0);
-		mResult = runPark("KA-01-HH-1234", "White"); 
+		mResult = parkCar("KA-01-HH-1234", "White"); 
 	}
 
 	@Test

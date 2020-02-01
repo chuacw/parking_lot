@@ -27,9 +27,9 @@ public class TestCommandQueryPlateForCarColour_Base extends TestCommandPark_Base
     @Before
     public void setup(){
 		createParkingLots(3);
-		mResult  = runPark(cPlate1, cColour1);
-		mResult2 = runPark(cPlate2, cColour2);
-		mResult3 = runPark(cPlate3, cColour1);
+		mResult  = parkCar(cPlate1, cColour1);
+		mResult2 = parkCar(cPlate2, cColour2);
+		mResult3 = parkCar(cPlate3, cColour1);
     }
 
 }

@@ -15,7 +15,7 @@ public class TestCommandStatus_CarsParked extends TestCommandPark_Base {
 		createParkingLots(1);
 		mPlate = "KA-01-HH-1234";
 		mColour = "White";
-		mResult = runPark(mPlate, mColour); 
+		mResult = parkCar(mPlate, mColour); 
 	}
 	
 	private void getStatus() {
