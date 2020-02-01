@@ -24,6 +24,7 @@ public class CommandQueryPlateForCarColour extends BaseCommandQuery {
 		StringBuilder lSB = new StringBuilder();
 		ParkingLot lParkingLot = Owner.getParkingLot(); 
 		int lUsed = lParkingLot.getUsed();
+		boolean lNotFound = true;
 		for (int i = 1; i <= lUsed; i++) {
 			Car lCar = lParkingLot.getCar(i);
 			String lCarColour = lCar.getColour();
@@ -33,9 +34,10 @@ public class CommandQueryPlateForCarColour extends BaseCommandQuery {
 					lSB.append(", ");
 				}
 				lSB.append(lCarPlate);
+				lNotFound = false;
 			}
 		}
-		if (lUsed == 0) {
+		if ((lUsed == 0) || (lNotFound)) {
 			lSB.append(cNotFound);
 		}
 		String lResult = lSB.toString();

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class TestCommandQueryPlateForCarColour extends TestCommandQueryPlateForCarColour_Base {
+public class TestCommandQueryPlateForCarColour_ColourFound extends TestCommandQueryPlateForCarColour_Base {
 
 	private String getActualResult() {
 		BaseCommand lCommand = new CommandQueryPlateForCarColour();
