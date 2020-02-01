@@ -2,9 +2,7 @@ package parking_lot;
 
 import static org.junit.Assert.assertArrayEquals;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.InputStream;
 import java.net.URL;
 
 import org.junit.Before;
