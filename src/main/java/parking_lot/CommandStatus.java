@@ -2,6 +2,11 @@ package parking_lot;
 
 import java.util.ArrayList;
 
+/**
+ * Returns the slot number used by all cars, its plate number, and colour.
+ * @author Administrator
+ *
+ */
 public class CommandStatus extends BaseCommand {
 
 	protected static String cStatus = "status";
