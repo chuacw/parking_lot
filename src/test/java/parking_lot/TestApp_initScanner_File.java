@@ -21,7 +21,7 @@ public class TestApp_initScanner_File {
 		ClassLoader classLoader = getClass().getClassLoader();
 		URL lFileResource2 = classLoader.getResource("testfile.txt");
 		File lFile = new File(lFileResource2.getFile());	
-		mApp.initScannerFile(lFile);
+		mApp.initScanner(lFile);
 	}
 
 	@Test

@@ -21,7 +21,7 @@ public class App {
 		mScanner = new Scanner(input);
 	}
 
-	public void initScannerFile(File aFile) {
+	public void initScanner(File aFile) {
 		try {
 			mScanner = new Scanner(aFile);
 		} catch (FileNotFoundException e) {
@@ -74,7 +74,7 @@ public class App {
 			mInteractive = true;
 		} else {
 			final String lFileName = aArgs[0];
-			lCommandLineParser.initScannerFile(new File(lFileName));
+			lCommandLineParser.initScanner(new File(lFileName));
 		}
 
 //        System.out.println("Parking system ready...");
