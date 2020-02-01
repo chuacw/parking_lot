@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class TestCommandLineParserHasCommandArgs extends TestCommandLineParserBase1 {
+public class TestApp_HasCommandArgs extends TestAppBase {
 
     @Test
     public void test() {

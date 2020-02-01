@@ -2,7 +2,7 @@ package parking_lot;
 
 import org.junit.Before;
 
-public class TestCommandLineParserBase1 {
+public class TestAppBase {
 
 	protected App commandlineParser;
 	protected static String verbPark = "park";
