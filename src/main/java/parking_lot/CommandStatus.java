@@ -25,16 +25,16 @@ public class CommandStatus extends BaseCommand {
 //		5      KA-01-HH-2701       Blue 
 //		6      KA-01-HH-3141      Black
 
-		boolean addLine = true;
+		boolean lAddLine = true;
 		mSB.append(cHeader);
 		ParkingLot lParkingLot = Owner.getParkingLot();
 		int lUsed = lParkingLot.getUsed();
 		for (int i = 1; i <= lUsed; i++) {
-			if ((addLine) && (mSB.length() > 0)) {
+			if ((lAddLine) && (mSB.length() > 0)) {
 				String lLineSep = System.lineSeparator();
 				mSB.append(lLineSep);
 			}
-			addLine = false;
+			lAddLine = false;
 			Car lCar = lParkingLot.getCar(i);
 			if (lCar != null) {
 				String lPlate = lCar.getPlate();
@@ -42,7 +42,7 @@ public class CommandStatus extends BaseCommand {
 				int index = i;
 				String lLine = String.format(cOutputFormat, index, lPlate, lColour);
 				mSB.append(lLine);
-				addLine = true;
+				lAddLine = true;
 			}
 		}
 

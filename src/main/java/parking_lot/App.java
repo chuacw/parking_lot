@@ -11,8 +11,8 @@ public class App {
 	public static String delimiter = " ";
 	
 	public String[] parseCommand(final String Line) {
-        final String[] result = Line.split(delimiter);
-        return result;
+        final String[] lResult = Line.split(delimiter);
+        return lResult;
     }
 
     private Scanner mScanner;
@@ -41,13 +41,13 @@ public class App {
     }
 
     public String[] nextCommandArgs() {
-        String line;
+        String lLine;
         if (mScanner != null)
-            line = mScanner.nextLine();
+            lLine = mScanner.nextLine();
         else
-            line = "";
-        String[] cmdArgs = line.split(delimiter);
-        return cmdArgs;
+            lLine = "";
+        String[] lCmdArgs = lLine.split(delimiter);
+        return lCmdArgs;
     }
     
     public static boolean mInteractive;

@@ -13,8 +13,8 @@ public class CommandLeave extends BaseCommand {
 
 	@Override
 	public String run(ArrayList<String> aArgs) {
-		int index = Integer.parseInt(aArgs.get(0));
-		String lResult = Owner.getParkingLot().removeCar(index);
+		int lIndex = Integer.parseInt(aArgs.get(0));
+		String lResult = Owner.getParkingLot().removeCar(lIndex);
 		return lResult;
 	}
 	
