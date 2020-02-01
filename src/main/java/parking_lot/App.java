@@ -66,15 +66,15 @@ public class App {
 
     public static void main(final String[] args) {
 
-        final App commandlineParser = new App();
+        final App lCommandLineParser = new App();
 
         mInteractive = false;
         if (args.length == 0) {
-        	commandlineParser.initScanner(System.in);
+        	lCommandLineParser.initScanner(System.in);
         	mInteractive = true;
         } else {
             final String lFileName = args[0];
-            commandlineParser.initScannerFileName(lFileName);
+            lCommandLineParser.initScannerFileName(lFileName);
         }
         
 //        System.out.println("Parking system ready...");
@@ -82,11 +82,11 @@ public class App {
         CommandController lCommandController = new CommandController();
         
         printPromptIfInteractive();
-        while (commandlineParser.hasCommandArgs()) {
+        while (lCommandLineParser.hasCommandArgs()) {
         	
         	try {
 
-        		final String[] lCommandArgs = commandlineParser.nextCommandArgs();
+        		final String[] lCommandArgs = lCommandLineParser.nextCommandArgs();
 				BaseCommand lCommand = lCommandController.findCommand(lCommandArgs[0]);
 				if (lCommand != null) {
 					int len = lCommand.getRequiredArgLen();
