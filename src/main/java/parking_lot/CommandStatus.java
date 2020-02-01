@@ -17,11 +17,9 @@ public class CommandStatus extends BaseCommand {
 		super(cStatus, 0);
 	}
 
-	private StringBuilder mSB;
-
 	@Override
 	public String run(ArrayList<String> aArgs) {
-		mSB = new StringBuilder();
+		StringBuilder lSBDetails = new StringBuilder();
 
 //		Slot No. Registration No Colour 
 //		1      KA-01-HH-1234      White 
@@ -31,13 +29,13 @@ public class CommandStatus extends BaseCommand {
 //		6      KA-01-HH-3141      Black
 
 		boolean lAddLine = true;
-		mSB.append(cHeader);
+		lSBDetails.append(cHeader);
 		ParkingLot lParkingLot = Owner.getParkingLot();
 		int lUsed = lParkingLot.getUsed();
 		for (int i = 1; i <= lUsed; i++) {
-			if ((lAddLine) && (mSB.length() > 0)) {
+			if ((lAddLine) && (lSBDetails.length() > 0)) {
 				String lLineSep = System.lineSeparator();
-				mSB.append(lLineSep);
+				lSBDetails.append(lLineSep);
 			}
 			lAddLine = false;
 			Car lCar = lParkingLot.getCar(i);
@@ -46,12 +44,12 @@ public class CommandStatus extends BaseCommand {
 				String lColour = lCar.getColour();
 				int index = i;
 				String lLine = String.format(cOutputFormat, index, lPlate, lColour);
-				mSB.append(lLine);
+				lSBDetails.append(lLine);
 				lAddLine = true;
 			}
 		}
 
-		String lResult = mSB.toString();
+		String lResult = lSBDetails.toString();
 		return lResult;
 	}
 
