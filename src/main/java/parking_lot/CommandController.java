@@ -25,7 +25,7 @@ public class CommandController {
 			try {
 				lResult = lBaseCommandClass.newInstance();
 			} catch (InstantiationException | IllegalAccessException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Unable to create instance of command: " + aCommand);
 				e.printStackTrace();
 			}
 		}
