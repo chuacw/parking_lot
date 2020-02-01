@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Finds the specific slot used up by a car with a specific plate number.
+ * 
  * @author chuacw
  *
  */

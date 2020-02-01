@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Finds all the slot numbers used by cars with a specific colour in the
  * parking lot.
+ * 
  * @author chuacw
  *
  */

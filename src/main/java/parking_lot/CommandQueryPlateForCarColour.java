@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Finds all the plate numbers for a specific colour in the parking lots
  * and returns it as a comma separated string.
+ * 
  * @author chuacw
  *
  */
