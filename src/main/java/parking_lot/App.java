@@ -68,13 +68,23 @@ public class App {
 
 		final App lCommandLineParser = new App();
 
-		mInteractive = false;
-		if (aArgs.length == 0) {
+		mInteractive = false; boolean lInitScanner = false;
+		if (aArgs.length > 0) {
+			final String lFileName = aArgs[0];
+			File lFile = new File(lFileName);
+			if (lFile.exists()) {
+				lInitScanner = true;
+				lCommandLineParser.initScanner(lFile);
+			} else {
+				String lFileDoesntExist = 
+				  String.format("File: %s doesn't exist. "+
+			        "Fallback to interactive mode.", lFileName);
+				System.out.println(lFileDoesntExist);
+			}
+		}
+		if ((!lInitScanner) || (aArgs.length == 0)) {
 			lCommandLineParser.initScanner(System.in);
 			mInteractive = true;
-		} else {
-			final String lFileName = aArgs[0];
-			lCommandLineParser.initScanner(new File(lFileName));
 		}
 
 //        System.out.println("Parking system ready...");
