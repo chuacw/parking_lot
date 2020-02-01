@@ -19,4 +19,5 @@ public class TestCreatedParkingLotShouldNotBe5 extends TestCreateParkingLotBase 
     	String lShould = String.format("Car park should have %d slots", mCreateSlots);
     	assertNotEquals(lShould, mCommandResult, lExpectedOutput);
     }
+	
 }

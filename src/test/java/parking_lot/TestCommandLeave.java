@@ -33,4 +33,5 @@ public class TestCommandLeave extends TestParkingLotsBase {
 		String lExpected = String.format(CommandLeave.cSlotFree, mLeftSlot);
 		assertEquals("Should have left slot 1", lExpected, mLeaveResult);
 	}
+	
 }

@@ -10,4 +10,5 @@ public class TestCommandLineParserHasCommandArgs extends TestCommandLineParserBa
     public void test() {
     	assertEquals("App should have command arguments", commandlineParser.hasCommandArgs(), true);
     }
+    
 }

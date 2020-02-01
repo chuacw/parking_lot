@@ -12,4 +12,5 @@ public class TestCarPlate extends TestCarBase {
 		String lShould = String.format("Plate should be %s", cCreatedPlate); 
 		assertEquals(lShould, cCreatedPlate, lActualPlate);
 	}
+	
 }

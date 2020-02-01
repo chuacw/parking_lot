@@ -19,4 +19,5 @@ public class TestCreatedParkingLotShouldHave6 extends TestCreateParkingLotBase {
     	String lShould = String.format("Car park should have %d slots", mCreateSlots);
     	assertEquals(lShould, mCommandResult, lExpectedOutput);
     }
+	
 }
