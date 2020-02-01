@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author chuacw
  *
  */
-public class TestCommandPark_Full1 extends TestCommandPark_Base {
+public class TestCommandPark_Full extends TestCommandPark_Base {
 
 	@Before
 	public void setup() {
