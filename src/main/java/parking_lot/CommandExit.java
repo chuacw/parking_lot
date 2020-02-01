@@ -15,4 +15,5 @@ public class CommandExit extends BaseCommand {
 		System.exit(0);
 		return null; // Unused, needed to keep compiler / parser happy
 	}
+	
 }
