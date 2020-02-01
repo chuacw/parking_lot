@@ -5,6 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This tests the case where the user creates 3 slots, and parks 3 cars,
+ * the user is parking up to the maximum limit.
+ *  
+ * @author chuacw
+ *
+ */
 public class TestCommandCreateParkingLot_TestMaxCapacity extends TestCommandPark_Base {
 
 	@Before
