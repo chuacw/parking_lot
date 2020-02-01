@@ -2,6 +2,11 @@ package parking_lot;
 
 import java.util.ArrayList;
 
+/**
+ * Finds the specific slot used up by a car with a specific plate number.
+ * @author chuacw
+ *
+ */
 public class CommandQuerySlotForCarPlate extends BaseCommandQuery {
 
 	protected static String cQuerySlotForCarPlate = "slot_number_for_registration_number";

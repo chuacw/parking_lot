@@ -2,6 +2,12 @@ package parking_lot;
 
 import java.util.ArrayList;
 
+/**
+ * Finds all the slot numbers used by cars with a specific colour in the
+ * parking lot.
+ * @author chuacw
+ *
+ */
 public class CommandQuerySlotForCarColour extends BaseCommandQuery {
 
 	protected static String cQuerySlotForCarColour = "slot_numbers_for_cars_with_colour";
