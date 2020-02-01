@@ -5,6 +5,7 @@ import static org.junit.Assert.assertArrayEquals;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
+import java.net.URL;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,14 +19,16 @@ public class TestApp_initScanner_File {
 		mApp = new App();
 
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("file/test.xml").getFile());		
+		URL lFileResource2 = classLoader.getResource("testfile.txt");
+		File lFile = new File(lFileResource2.getFile());	
+		mApp.initScannerFile(lFile);
 	}
 
 	@Test
 	public void test() {
 		String[] lActualCommandArg = mApp.nextCommandArgs();
-		String[] lExpectedArg = { "add", "5" };
-		assertArrayEquals("Should be 'add 5'", lExpectedArg, lActualCommandArg);
+		String[] lExpectedArg = { "1", "2" };
+		assertArrayEquals("Should be '1 2'", lExpectedArg, lActualCommandArg);
 	}
 
 }
