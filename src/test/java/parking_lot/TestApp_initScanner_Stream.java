@@ -10,24 +10,24 @@ import org.junit.Test;
 
 public class TestApp_initScanner_Stream {
 
- protected App mApp;
- 
-    @Before
-    public void setup(){
-     mApp = new App();
-     
-     String input = "add 5";
-     InputStream in = new ByteArrayInputStream(input.getBytes());
-     System.setIn(in);
-     mApp.initScanner(System.in);
+	protected App mApp;
 
-    }
- 
- @Test
- public void test() {
-  String[] lActualCommandArg = mApp.nextCommandArgs();
-  String[] lExpectedArg = {"add", "5"};
-  assertArrayEquals("Should be 'add 5'", lExpectedArg, lActualCommandArg);
- }
- 
+	@Before
+	public void setup() {
+		mApp = new App();
+
+		String input = "add 5";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		mApp.initScanner(System.in);
+
+	}
+
+	@Test
+	public void test() {
+		String[] lActualCommandArg = mApp.nextCommandArgs();
+		String[] lExpectedArg = { "add", "5" };
+		assertArrayEquals("Should be 'add 5'", lExpectedArg, lActualCommandArg);
+	}
+
 }
