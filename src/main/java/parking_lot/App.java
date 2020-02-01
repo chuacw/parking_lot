@@ -99,12 +99,12 @@ public class App {
 					String runResult = lCommand.run(lArgs);
 					if (runResult != null) {
 						System.out.println(runResult);
-						printNewLineIfInteractive();
+						// printNewLineIfInteractive();
 					}
 				} else {
 					String lLine = String.format("Command not found: %s.", lCommandArgs[0]);
 					System.out.println(lLine);
-					printNewLineIfInteractive();
+					// printNewLineIfInteractive();
 				}
 				
 			} catch (Exception e) {

@@ -36,14 +36,31 @@ application {
 
 distributions {
     main {
-        distributionBaseName.set("parking_lot_sources")
+        distributionBaseName.set("sources")
         
         contents {
-            into("sources") {
+            
+            into("parking_lot/src") {
                 from("src")
             }
-            into(".git") {
+            into("parking_lot/.git") {
                 from(".git")
+            }
+            into("parking_lot/gradle") {
+                from("gradle")
+            }
+            into("parking_lot/") {
+                from("gradlew", "gradlew.bat", "settings.gradle.kts", 
+                  "build.gradle.kts", "README.md", "BUILD.md", "file_inputs.txt")
+            }
+            into("parking_lot/specifications") {
+                from("specifications")
+            }
+            into("parking_lot/functional_spec") {
+                from("functional_spec")
+            }
+            into("parking_lot/bin") {
+                from("bin/parking_lot", "bin/run_functional_tests", "bin/setup")
             }
         }
     }
@@ -57,7 +74,10 @@ tasks.withType(Jar::class) {
     }
 }
 
-
+// Disables tar generation
+tasks.withType(Tar::class) {
+    enabled = false
+}
 
 
 

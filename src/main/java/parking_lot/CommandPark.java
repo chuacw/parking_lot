@@ -22,10 +22,12 @@ public class CommandPark extends BaseCommand {
  		if (lParkingLot.getAvailable() > 0) {
 			Car lCar = new Car(lColour, lPlate);
 			Ticket lTicket = lParkingLot.parkCar(lCar);
+
 			String lResult = String.format(cAllocatedSlot, lTicket.getSlotNumber());
 			return lResult;
 		} else {
-			return cParkFull;
+			String lResult = cParkFull;
+			return lResult;
 		}
 	}
 
