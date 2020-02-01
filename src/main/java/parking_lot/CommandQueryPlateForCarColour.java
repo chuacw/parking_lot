@@ -37,7 +37,7 @@ public class CommandQueryPlateForCarColour extends BaseCommandQuery {
 				lNotFound = false;
 			}
 		}
-		if ((lUsed == 0) || (lNotFound)) {
+		if (lNotFound) {
 			lSB.append(cNotFound);
 		}
 		String lResult = lSB.toString();
