@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestCommandCreateParkingLot_ShouldHave6 extends TestCreateParkingLotBase {
+public class TestCommandCreateParkingLot_ShouldHave6 extends TestCommandCreateParkingLot_Base {
 
 	@Before
     public void setup(){

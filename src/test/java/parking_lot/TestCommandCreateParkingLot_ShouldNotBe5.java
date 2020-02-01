@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestCommandCreateParkingLot_ShouldNotBe5 extends TestCreateParkingLotBase {
+public class TestCommandCreateParkingLot_ShouldNotBe5 extends TestCommandCreateParkingLot_Base {
 
 	@Before
     public void setup(){

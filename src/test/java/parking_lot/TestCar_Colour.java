@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class TestCarColour extends TestCarBase {
+public class TestCar_Colour extends TestCar_Base {
 
 	@Test
 	public void test() {

@@ -2,7 +2,7 @@ package parking_lot;
 
 import org.junit.Before;
 
-public class TestCarBase {
+public class TestCar_Base {
 
 	protected Car mCar;
 	protected static String cCreatedColour = "White";
