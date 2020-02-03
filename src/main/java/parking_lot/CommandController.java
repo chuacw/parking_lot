@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CommandController {
 	
-	private Map<String, Class<? extends BaseCommand>> mCommands;
+	private Map<String, Class<? extends parking_lot.BaseCommand>> mCommands;
 
 	public CommandController() {
 		mCommands = new LinkedHashMap<String, Class<? extends BaseCommand>>();
@@ -19,6 +19,7 @@ public class CommandController {
 		mCommands.put(CommandExit.cExit, CommandExit.class);
 	}
 
+	@SuppressWarnings("deprecation")
 	public BaseCommand findCommand(String aCommand) {
 		Class<? extends BaseCommand> lBaseCommandClass = mCommands.get(aCommand);
 		BaseCommand lResult = null;
