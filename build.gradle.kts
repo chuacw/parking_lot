@@ -75,9 +75,9 @@ tasks.withType(Jar::class) {
 }
 
 // Disables tar generation
-tasks.withType(Tar::class) {
-    enabled = false
-}
+// tasks.withType(Tar::class) {
+//     enabled = false
+// }
 
 
 
