@@ -7,16 +7,8 @@
 # After this is run, bin/parking_lot
 # should Just Work.
 
-# Ubuntu 18.04.2 64-bit desktop
-# Install default jdk, comment out the following line if Java is already installed.
-sudo apt install -y default-jdk
-
-# Install the default jre, comment out the following line if JRE is already installed.
-sudo apt install -y default-jre
-
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 cd $DIR/..
-chmod a+x gradlew
 ./gradlew build
 ./gradlew jar
