@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class CommandStatus extends BaseCommand {
 
 	protected static String cStatus = "status";
-	public static String cHeader = "Slot No. Registration No Colour";
-	public static String cOutputFormat = "%d      %s      %s";
+	public static String cHeader = "Slot No.    Registration No    Colour";
+	public static String cOutputFormat = "%d           %s      %s";
 
 	public CommandStatus() {
 		super(cStatus, 0);
