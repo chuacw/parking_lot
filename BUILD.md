@@ -1,20 +1,17 @@
 # How to build the application
 
 To build the application, follow these steps.
-Download the zip anywhere on your system, then move it into your user directory.
-The following commands assume that source.zip is in your user directory.  
+Download the tar anywhere on your system, then move it into your user directory.
+The following commands assume that ChuaCheeWee-source.tar is in your user directory.  
 The steps below creates a chuacw directory, changes into the new directory,
   
  - Open up a terminal and run these commands:
    - cd ~/
    - mkdir chuacw 
-   - unzip source.zip -d chuacw
+   - tar -C chuacw -xvf ChuaCheeWee-source.tar
    - cd chuacw/sources/parking_lot
-   - chmod a+x gradlew
-   - ./gradlew
-   - ./gradlew build
-   - java -jar build/libs/parking_lot.jar
-  
+   - bin/setup
+   - bin/run_functional_tests
   
 Once you're done, you can delete the entire chuacw directory like so:
   - cd ~/
@@ -22,8 +19,8 @@ Once you're done, you can delete the entire chuacw directory like so:
   
 # Testing the application
 
- - To test the application, follow the steps above, but do not execute the last command (the javar -jar) step.
- - ./gradlew test
+ - To test the application, in the parking_lot directory:   
+   - ./gradlew test
  
 You'll see the test results in the chuacw/sources/parking_lot/build/test-results/test directory.  
 
