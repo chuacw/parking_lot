@@ -2,8 +2,6 @@ package parking_lot;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class TestCommandQuerySlotForCarColour_ColourNotFound extends TestCommandQuerySlotForCarColour_Base {
