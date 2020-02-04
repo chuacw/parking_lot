@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ParkingLot {
 
 	public static final String cSlotFree = "Slot number %d is free";
+	public static final String cInvalidSlot = "The slot number is invalid";
 	private ArrayList<Car> mParkedCars;
 	private int mParkedCarsCapacity;
 	private int mRealCapacity;
@@ -27,7 +28,7 @@ public class ParkingLot {
 	public Ticket parkCar(Car aCar) {
 		int lIndex = -1;
 		int lLen = mParkedCars.size();
-		for (int i = 0; i < lLen; i++) {
+		for (int i = 1; i < lLen; i++) {
 			Car lCar = mParkedCars.get(i);
 			if (lCar == null) {
 				lIndex = i;
@@ -44,22 +45,36 @@ public class ParkingLot {
 		return lTicket;
 	}
 	
-	/**
-	 * @param aIndex
-	 * @return A string indicating which slot is now free.
-	 */
-	public String removeCar(int aIndex) {
-		mParkedCars.set(aIndex, null);
-		String lResult = String.format(cSlotFree, aIndex);
+	public boolean hasCarParked(int aSlot) {
+		boolean lResult = false;
+		if ((aSlot > 0) && (aSlot < mParkedCars.size())) {
+			Car aCar = mParkedCars.get(aSlot);
+			lResult = aCar != null;
+		}
 		return lResult;
 	}
 	
 	/**
-	 * @param aIndex
-	 * @return The car parked at the aIndex location.
+	 * @param aSlot
+	 * @return A string indicating which slot is now free.
 	 */
-	public Car getCar(int aIndex) {
-		Car lResult = mParkedCars.get(aIndex);
+	public String removeCar(int aSlot) {
+		String lResult;
+		if (hasCarParked(aSlot)) {
+			mParkedCars.set(aSlot, null);
+			lResult = String.format(cSlotFree, aSlot);
+		} else {
+			lResult = cInvalidSlot;
+		}
+		return lResult;
+	}
+	
+	/**
+	 * @param aSlot
+	 * @return The car parked at the aSlot location.
+	 */
+	public Car getCar(int aSlot) {
+		Car lResult = mParkedCars.get(aSlot);
 		return lResult;
 	}
 	
