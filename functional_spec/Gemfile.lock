@@ -21,8 +21,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16)
-  rake (~> 10.0)
+  bundler (>= 2.2.33)
+  rake (>= 12.3.3)
   rspec (~> 3.0)
 
 BUNDLED WITH
