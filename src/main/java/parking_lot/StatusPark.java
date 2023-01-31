@@ -1,5 +1,8 @@
 package parking_lot;
 
-public class StatusPark {
+public class StatusPark extends BaseStatus {
+
+	public StatusPark() {
+	}
 
 }

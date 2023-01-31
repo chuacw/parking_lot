@@ -17,11 +17,11 @@ public class App {
 
 	private Scanner mScanner;
 
-	public void initScanner(String input) {
+	public void initScanner(final String input) {
 		mScanner = new Scanner(input);
 	}
 
-	public void initScanner(File aFile) {
+	public void initScanner(final File aFile) {
 		try {
 			mScanner = new Scanner(aFile);
 		} catch (FileNotFoundException e) {
@@ -29,7 +29,7 @@ public class App {
 		}
 	}
 
-	public void initScanner(InputStream input) {
+	public void initScanner(final InputStream input) {
 		mScanner = new Scanner(input);
 	}
 
@@ -67,7 +67,9 @@ public class App {
 	public static void main(final String[] aArgs) {
 
 		final App lCommandLineParser = new App();
-
+		
+		DispatchStrategy lDispatchStrategy = DispatchStrategy.getStrategy("fill_first");
+		
 		mInteractive = false; boolean lInitScanner = false;
 		if (aArgs.length > 0) {
 			final String lFileName = aArgs[0];
@@ -104,9 +106,12 @@ public class App {
 					for (int i = 1; i <= len; i++) {
 						lArgs.add(lCommandArgs[i]);
 					}
-					String lRunResult = lCommand.run(lArgs);
-					if (lRunResult != null) {
-						System.out.println(lRunResult);
+					// String lRunResult1 = lCommand.run(lArgs);
+					BaseStatus lRunStatus = lCommand.runStatus(lArgs);
+					StatusOutputter lSO = new StatusOutputter(lRunStatus);
+					String lRunResult2 = lSO.toString();
+					if (lRunResult2 != null) {
+						System.out.println(lRunResult2);
 						// printNewLineIfInteractive();
 					}
 				} else {

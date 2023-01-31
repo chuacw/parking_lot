@@ -43,5 +43,30 @@ public class CommandQueryPlateForCarColour extends BaseCommandQuery {
 		String lResult = lSB.toString();
 		return lResult;
 	}
+	
+	@Override
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		String lColour = aArgs.get(0);
+		ParkingLot lParkingLot = Owner.getParkingLot(); 
+		int lUsed = lParkingLot.getUsed();
+		boolean lNotFound = true;
+		ArrayList<String> lCarPlates = new ArrayList<String>();
+		for (int i = 1; i <= lUsed; i++) {
+			Car lCar = lParkingLot.getCar(i);
+			String lCarColour = lCar.getColour();
+			if (lCarColour.equalsIgnoreCase(lColour)) {
+				String lCarPlate = lCar.getPlate();
+				lCarPlates.add(lCarPlate);
+				lNotFound = false;
+			}
+		}
+		BaseStatus lResult;
+		if (lNotFound) {
+			lResult = new StatusNotFound();
+		} else {
+			lResult = new StatusQueryPlate(lCarPlates);
+		}
+		return lResult;
+	}
 
 }

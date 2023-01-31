@@ -18,4 +18,11 @@ public class CommandLeave extends BaseCommand {
 		return lResult;
 	}
 	
+	@Override
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		int lIndex = Integer.parseInt(aArgs.get(0));
+		BaseStatus lResult = Owner.getParkingLot().removeCarStatus(lIndex);
+		return lResult;
+	}
+
 }

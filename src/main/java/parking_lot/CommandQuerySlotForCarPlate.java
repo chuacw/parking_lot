@@ -39,5 +39,29 @@ public class CommandQuerySlotForCarPlate extends BaseCommandQuery {
 		String lResult = lSB.toString();
 		return lResult;
 	}
+	
+	@Override
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		String lPlate = aArgs.get(0);
+		ParkingLot lParkingLot = Owner.getParkingLot(); 
+		int lUsed = lParkingLot.getUsed();
+		boolean lFound = false; int lSlotNumber = 0;
+		for (int i = 1; i <= lUsed; i++) {
+			Car lCar = lParkingLot.getCar(i);
+			String lCarPlate = lCar.getPlate();
+			if (lCarPlate.equals(lPlate)) {
+				lSlotNumber = i;
+				lFound = true;
+				break;
+			}
+		}
+		BaseStatus lResult;
+		if (!lFound) {
+			lResult = new StatusNotFound();
+		} else {
+			lResult = new StatusQuerySlot(lSlotNumber);
+		}
+		return lResult;
+	}
 
 }

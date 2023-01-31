@@ -69,6 +69,19 @@ public class ParkingLot {
 		return lResult;
 	}
 	
+	public BaseStatus removeCarStatus(int aSlotNumber) {
+		BaseStatus lResult;
+		if (hasCarParked(aSlotNumber)) {
+			mParkedCars.set(aSlotNumber, null);
+			lResult = new StatusSlotFree(aSlotNumber);
+		} else {
+			lResult = new StatusSlotInvalid(aSlotNumber);
+		}
+		return lResult;
+	}
+	
+	
+	
 	/**
 	 * @param aSlot
 	 * @return The car parked at the aSlot location.

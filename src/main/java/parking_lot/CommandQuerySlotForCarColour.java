@@ -42,5 +42,29 @@ public class CommandQuerySlotForCarColour extends BaseCommandQuery {
 		String lResult = lSB.toString();
 		return lResult;
 	}
+	
+	@Override
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		String lColour = aArgs.get(0);
+		ParkingLot lParkingLot = Owner.getParkingLot(); 
+		int lUsed = lParkingLot.getUsed();
+		ArrayList<Integer> lSlotsUsed = new ArrayList<Integer>();
+		boolean lNotFound = true;
+		for (int i = 1; i <= lUsed; i++) {
+			Car lCar = lParkingLot.getCar(i);
+			String lCarColour = lCar.getColour();
+			if (lCarColour.equalsIgnoreCase(lColour)) {
+				lSlotsUsed.add(i);
+				lNotFound = false;
+			}
+		}
+		BaseStatus lResult;
+		if (!lNotFound) {
+			lResult = new StatusQuerySlot(lSlotsUsed);
+		} else {
+			lResult = new StatusNotFound();
+		}
+		return lResult;
+	}
 
 }

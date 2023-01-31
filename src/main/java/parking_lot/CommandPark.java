@@ -31,4 +31,23 @@ public class CommandPark extends BaseCommand {
 		}
 	}
 
+	@Override
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		ParkingLot lParkingLot = Owner.getParkingLot();
+		// park KA-01-HH-1234 White
+		String lPlate = aArgs.get(0);
+		String lColour = aArgs.get(1);
+
+ 		BaseStatus lStatus;
+		if (lParkingLot.getAvailable() > 0) {
+			Car lCar = new Car(lColour, lPlate);
+			Ticket lTicket = lParkingLot.parkCar(lCar);
+
+			lStatus = new StatusParkAllocatedSlot(lTicket.getSlotNumber());
+		} else {
+			lStatus = new StatusParkFull();
+		}
+		return lStatus;
+	}	
+	
 }

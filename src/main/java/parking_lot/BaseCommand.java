@@ -27,5 +27,9 @@ public class BaseCommand {
 	public String run(ArrayList<String> aArgs) {
 		return null;
 	}
-
+	
+	public BaseStatus runStatus(ArrayList<String> aArgs) {
+		return null;
+	}
+	
 }
